@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib> 
-#include <windows.h>
+#include <windows.h> ///// akumaqqe mode
 
 using namespace std;
 
