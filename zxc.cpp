@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib> 
-#include <windows.h> ///// akumaqqe mode
+#include <windows.h> 
+хуесос ебаный на модере твича
 
 using namespace std;
 
