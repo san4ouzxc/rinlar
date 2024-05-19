@@ -3,7 +3,7 @@
 #include <windows.h> 
 
 using namespace std;
-
+///ffff
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     for (int i = 0; i < 50; i++) {
