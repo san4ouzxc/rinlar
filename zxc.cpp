@@ -18,8 +18,8 @@ int main() {
         cout << "####  ####  ####  #### " << endl;
         cout << "#  #     #     #  #  # " << endl;
         cout << "####  ####  ####  #### " << endl;
-        system("clear");
+        system("cls");
     }
-    // ; // Для Linux и MacOS
+    
     return 0;
 }
