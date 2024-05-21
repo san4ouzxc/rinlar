@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib> 
 #include <windows.h> 
-//testtt
+//test
 using namespace std;
 
 int main() {
