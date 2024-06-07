@@ -1,0 +1,184 @@
+#include <iostream>
+#include <array>
+#include "menu1.h"
+#include <ncurses.h>
+using namespace std; 
+
+
+class showMan {
+private:
+int err;
+public:
+void printMan(int err) {
+    switch (err) {
+            case 0:
+            case 1:
+                cout << "\n\n\n\n\n\n\n";
+                cout << "        ____ \n";
+                cout << "       /    /   \n";
+                cout << "      / _ _  /  \n";
+                cout << "      /  __  /  \n";
+                cout << "      /____ /   \n";
+                cout << "      __|__   \n";
+                cout << "     /  |  /  \n";
+                cout << "    /   |   / \n";
+                cout << "       / /    \n";
+                cout << "     _/   /_  \n";
+                break;
+
+            case 2:
+            case 3:
+                cout << "\n\n\n\n\n\n\n";
+                cout << "      ____          \n";
+                cout << "     /    /        \n";
+                cout << "    /  _ _ /       \n";
+                cout << "    /   __ /       \n";
+                cout << "     /____/        \n";
+                cout << "     __|__        \n";
+                cout << "    /  |  /        \n";
+                cout << "   /   |   /       \n";
+                cout << "      / /          \n";
+                cout << " ____/___/____     \n";
+                cout << " |            |    \n";
+                cout << " |            |    \n";
+                cout << " |            |    \n";
+                break;
+
+            case 4:
+            case 5:
+                cout << "  _______________________ \n";
+                cout << " |_____________________  |\n";
+                cout << "                       | |\n";
+                cout << "                       | |\n";
+                cout << "      ____             | |\n";
+                cout << "     /    /            | |\n";
+                cout << "    /  _ _ /           | |\n";
+                cout << "    /   __ /           | |\n";
+                cout << "     /____/            | |\n";
+                cout << "      __|__            | |\n";
+                cout << "     /  |  /           | |\n";
+                cout << "    /   |   /          | |\n";
+                cout << "       / /             | |\n";
+                cout << "  ____/___/____        | |\n";
+                cout << " |            |        | |\n";
+                cout << " |            |        | |\n";
+                cout << " |            |        | |\n";
+                break;
+
+            case 6:
+            case 7:
+                cout << "  _______________________ \n";
+                cout << " |_____________________  |\n";
+                cout << "       |               | | \n";
+                cout << "       |               | | \n";
+                cout << "      _|___            | | \n";
+                cout << "     /    /            | |\n";
+                cout << "    /  _ _ /           | |\n";
+                cout << "    /   __ /           | |\n";
+                cout << "     /____/            | |\n";
+                cout << "     _<>__             | |\n";
+                cout << "    /  |  /            | |\n";
+                cout << "   /   |   /           | |\n";
+                cout << "      / /              | |\n";
+                cout << " ____/___/____         | |\n";
+                cout << " |            |        | |\n";
+                cout << " |            |        | |\n";
+                cout << " |            |        | |\n";
+                break;
+
+            case 8:
+                cout << "  _______________________ \n";
+                cout << " |_____________________  |\n";
+                cout << "       |               | | \n";
+                cout << "       |               | | \n";
+                cout << "       |               | | \n";
+                cout << "       |               | | \n";
+                cout << "      _|___            | | \n";
+                cout << "     /    /            | |\n";
+                cout << "    /  _ _ /           | |\n";
+                cout << "    /   __ /           | |\n";
+                cout << "     /____/            | |\n";
+                cout << "     _<>__             | |\n";
+                cout << "    /  |  /            | |\n";
+                cout << "   /   |   /           | |\n";
+                cout << "       / /             | |\n";
+                cout << "     /   /             | |\n";
+                cout << "                       | |\n";
+            break;
+        default: 
+            break;
+    }
+}
+};
+
+int main() {
+    Menu menu;
+    menu.runMenu();
+    showMan obj;
+    system("clear");
+    
+    int err = 1;
+    string b = "name";
+    array<bool, 26> alph = {};
+    array<char, 4> word = {'*', '*', '*', '*'};
+    
+
+    int cnt = 0;
+    int flag3 = 1;
+
+    while (err < 9 && flag3 != 0) {
+        if (cnt == 0) {
+
+
+    cout << endl;
+    for (int i = 0; i < alph.size(); i++) {
+        if (alph[i] == true) cout << " ";
+        else cout << static_cast<char>(i + 97);
+    }
+    cout << endl; cout << endl; cout << endl;
+    cout << "errors: " << "0/8" << endl;
+        }
+        cnt++;
+         
+
+        
+    
+        
+        flag3 = 0;
+        char temp;
+        cout << "enter char" << endl;
+        cin >> temp;
+        system("clear");
+
+        obj.printMan(err);
+    cout << endl;
+
+        bool flag = false;
+        for (int i = 0; i < b.size(); i++) {  
+            alph[static_cast<int>(temp) - 97] = true;
+            if(temp == b[i]) {
+                flag = true;
+                alph[static_cast<int>(temp) - 97] = true;
+                if (i < 5) word[i] = b[i];
+            }
+        }
+        if (!flag) err++;
+        
+        
+        for (int i = 0; i < alph.size(); i++) {
+            if (alph[i] || static_cast<char>(i + 97) == temp) cout << " ";
+            else cout << static_cast<char>(i + 97);
+        }
+        cout << endl; cout << endl;
+        for (int i = 0; i < word.size(); i++) {
+            if (word[i] != '*') cout << word[i];
+            else { cout << '*'; flag3++; }
+        }
+        cout << endl;
+
+        cout << "errors: " << err - 1 << "/8" << endl;
+    }
+    if (flag3 == 0) cout << "you guessed the word"; else cout << "you lost the game" << endl;
+    return 0;
+}
+

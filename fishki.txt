@@ -1,0 +1,13 @@
+ncurses.h
+endwin
+noecho
+resize term
+canvas
+addch
+getch
+wcout
+
+g++ 1.cpp -o 1 -lncurses
+g++ 4.cpp -o 4 -lncurses
+cd /mnt/c/Users/savch/Desktop/mmc141221/
+cd C:/Users/savch/Desktop/mmc141221/2405
